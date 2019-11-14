@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import MemberList from'./components/MemberList';
 import Form from'./components/Form';
+import styled from'styled-components';
 
 
 function App() {
@@ -25,11 +26,16 @@ function App() {
 
   return (
     <div className="App">
-      <h1>About our Team</h1>
+      <H1>About our Team</H1>
       <MemberList member={member} />
       <Form addMember={addMember} />
     </div>
   );
 }
+
+const H1 = styled.h1`
+background-color:lavender;
+border: 1px solid black;
+`;
 
 export default App;

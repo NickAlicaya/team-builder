@@ -1,19 +1,40 @@
 import React from'react';
+import styled from'styled-components'
+// import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 
 const MemberList = props => {
   // console.log(MemberList)
 return (
-<div className='memberList'>
+<Container>
+  <List className='memberList'>
   {props.member.map(list => (
-    <div className='list' key={list.name}>
-      <h3>{list.name}</h3>
-      <p>{list.email}</p>
-      <p>{list.role}</p>
+    <div key={list.name}>
+      <h4>Name: {list.name}</h4>
+      <p>Email: {list.email}</p>
+      <p>Role: {list.role}</p>
       </div>
   ))}
-</div>
+  </List>
+</Container>
   )
 };
+
+const Container = styled.div`
+border: 1px solid black;
+display:flex;
+flex-direction:row;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+`;
+
+const List = styled.div`
+border: 1px solid black;
+background-color:pink;
+width: 30%;
+padding:2%;
+text-align:left;
+`;
 
 export default MemberList

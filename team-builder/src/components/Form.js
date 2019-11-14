@@ -1,7 +1,7 @@
 import React,{ useState } from'react';
 
 const Form = props => {
-    console.log('PROPS',props)
+    // console.log('PROPS',props)
 const [newbie, setNewbie] =useState({name: '', email: '', role: ''})
 
 const handleChanges = e => {
