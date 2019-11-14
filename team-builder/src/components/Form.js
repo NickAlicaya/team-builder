@@ -1,17 +1,18 @@
 import React,{ useState } from'react';
 
 const Form = props => {
-const [member, setMember] =useState({name: '', email: '', role: ''})
+    console.log('PROPS',props)
+const [newbie, setNewbie] =useState({name: '', email: '', role: ''})
 
 const handleChanges = e => {
-    setMember({...member, [e.target.name]: e.target.value});
+    setNewbie({...newbie, [e.target.name]: e.target.value});
     console.log(e.target.name);
 };
 
 const submitForm = e => {
     e.preventDefault();
-    props.addNewMember(member)
-    setMember({ name: '',email: '', role: ''})
+    props.addMember(newbie)
+    setNewbie({ name: '',email: '', role: ''})
 };
 
 return (
@@ -20,25 +21,28 @@ return (
     <input
     id='name'
     type='text'
-    name='memberName'
+    name='name'
+    placeholder='Enter Name'
     onChange={handleChanges}
-    value={member.name}
+    value={newbie.name}
     />
     <label htmlFor='email'>Email</label>
     <input
     id='email'
     type='text'
-    name='memberEmail'
+    name='email'
+    placeholder='Enter Email'
     onChange={handleChanges}
-    value={member.email}
+    value={newbie.email}
     />
     <label htmlFor='role'>Role</label>
     <input
     id='role'
     type='text'
-    name='memberRole'
+    name='role'
+    placeholder='Enter Role'
     onChange={handleChanges}
-    value={member.role}
+    value={newbie.role}
     />
     <button type='submit'>Add Member</button>
 </form>   
