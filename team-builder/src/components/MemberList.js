@@ -6,17 +6,17 @@ import styled from'styled-components'
 const MemberList = props => {
   // console.log(MemberList)
 return (
-<Container>
-  <List className='memberList'>
+
+  <Container className='memberList'>
   {props.member.map(list => (
-    <div key={list.name}>
+    <List key={list.name}>
       <h4>Name: {list.name}</h4>
       <p>Email: {list.email}</p>
       <p>Role: {list.role}</p>
-      </div>
+      </List>
   ))}
-  </List>
-</Container>
+  </Container>
+
   )
 };
 
@@ -30,11 +30,13 @@ align-items:center;
 `;
 
 const List = styled.div`
-border: 1px solid black;
-background-color:pink;
+border: 10px solid silver;
+background-color:lemonchiffon;
 width: 30%;
 padding:2%;
 text-align:left;
+margin:20px auto;
+border-radius:5px;
 `;
 
 export default MemberList
